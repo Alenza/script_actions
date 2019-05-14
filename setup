@@ -25,7 +25,7 @@
 
 
 ## install python packages
-sudo -H -u deckysystem bash -c 'cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user'
+## sudo -H -u deckysystem bash -c 'cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user'
 chmod -R 777 /root/.local/lib/python2.7/site-packages
 chmod -r 777 /usr/local/lib/python2.7/dist-packages
 chmod -R 777 /home/deckysystem/.local/lib/python2.7/site-packages

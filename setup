@@ -17,6 +17,9 @@ sudo pip install --upgrade setuptools
 ## install git
 apt-get install git
 
+## switch to deckystsem
+su - deckysystem
+
 ## download git repo
 git clone https://kskp:Kskp%401712@github.com/Alenza/EquipmentLifeCycle_RWG.git --branch develop /home/deckysystem/EquipmentLifeCycle_RWG
 chmod -R 777 /home/deckysystem/EquipmentLifeCycle_RWG

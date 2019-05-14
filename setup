@@ -25,4 +25,4 @@ git clone https://kskp:Kskp%401712@github.com/Alenza/EquipmentLifeCycle_RWG.git 
 chmod -R 777 /home/deckysystem/EquipmentLifeCycle_RWG
 
 ## install python packages
-cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user
+su - deckysystem cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user

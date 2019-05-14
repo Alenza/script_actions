@@ -28,8 +28,5 @@ chmod -R 777 /root/.local/lib/python2.7/site-packages
 chmod -r 777 /usr/local/lib/python2.7/dist-packages
 chmod -R 777 /home/deckysystem/.local/lib/python2.7/site-packages
 
-echo "export PYTHONPATH=$PYTHONPATH:/home/deckysystem/.local/lib/python2.7/site-packages" >> /home/deckysystem/.bash_profile
-echo "export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/dist-packages" >> /home/deckysystem/.bash_profile
-echo "export PYTHONPATH=$PYTHONPATH:/root/.local/lib/python2.7/site-packages" >> /home/deckysystem/.bash_profile
-
+echo "export PYTHONPATH=$PYTHONPATH:/home/deckysystem/.local/lib/python2.7/site-packages:/usr/local/lib/python2.7/dist-packages:/root/.local/lib/python2.7/site-packages" >> /home/deckysystem/.bash_profile
 source /home/deckysystem/.bash_profile

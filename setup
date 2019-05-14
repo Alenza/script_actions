@@ -19,6 +19,7 @@ apt-get install git
 
 ## download git repo
 git clone https://kskp:Kskp%401712@github.com/Alenza/EquipmentLifeCycle_RWG.git --branch develop
+chmod -R 777 /home/deckysystem/EquipmentLifeCycle_RWG
 
 ## install python packages
 cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user

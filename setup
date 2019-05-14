@@ -17,13 +17,10 @@ sudo pip install --upgrade setuptools
 ## install git
 apt-get install git
 
-## switch to deckystsem
-su - deckysystem
-
 ## download git repo
 rm -rf /home/deckysystem/EquipmentLifeCycle_RWG
 git clone https://kskp:Kskp%401712@github.com/Alenza/EquipmentLifeCycle_RWG.git --branch develop /home/deckysystem/EquipmentLifeCycle_RWG
 chmod -R 777 /home/deckysystem/EquipmentLifeCycle_RWG
 
 ## install python packages
-su - deckysystem cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user
+sudo -H -u deckysystem bash -c 'cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user'

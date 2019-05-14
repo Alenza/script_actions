@@ -24,4 +24,3 @@ chmod -R 777 /home/deckysystem/EquipmentLifeCycle_RWG
 
 ## install python packages
 sudo -H -u deckysystem bash -c 'cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user'
-

@@ -1,0 +1,25 @@
+#script actions: 
+#	install docker on namenode
+#	install mssql driver on all nodes
+#	install pip and other packages on all nodes
+#	git clone the elcm repository
+
+## install sql server jdbc driver
+wget https://download.microsoft.com/download/2/F/C/2FC75210-EDDE-464C-8E54-45C0291032FF/sqljdbc_7.0.0.0_enu.tar.gz -P /usr/local
+gzip -d /usr/local/sqljdbc_7.0.0.0_enu.tar.gz
+tar -xf /usr/local/sqljdbc_7.0.0.0_enu.tar -C /usr/local
+rm /usr/local/sqljdbc_7.0.0.0_enu.tar
+
+## install pip
+python -m pip install --upgrade pip
+sudo pip install --upgrade setuptools
+
+## install git
+apt-get install git
+
+## download git repo
+git clone https://kskp:Kskp%401712@github.com/Alenza/EquipmentLifeCycle_RWG.git --branch develop
+
+## install python packages
+pip install -r /home/deckysystem/requirements.txt --user
+cat /home/deckysystem/requirements.txt | xargs -n 1 sudo pip install --user

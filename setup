@@ -21,6 +21,7 @@ apt-get install git
 su - deckysystem
 
 ## download git repo
+rm -rf /home/deckysystem/EquipmentLifeCycle_RWG
 git clone https://kskp:Kskp%401712@github.com/Alenza/EquipmentLifeCycle_RWG.git --branch develop /home/deckysystem/EquipmentLifeCycle_RWG
 chmod -R 777 /home/deckysystem/EquipmentLifeCycle_RWG
 

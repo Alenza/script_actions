@@ -4,6 +4,28 @@
 #	install pip and other packages on all nodes
 #	git clone the elcm repository
 
+git_uid=$1
+git_pwd=$2
+git_branch=$3
+
+if [ -z "$git_uid" ]
+    then
+        echo "git username not supplied. Try again."
+        exit 1
+fi
+
+if [ -z "$git_pwd" ]
+    then
+        echo "git password not supplied. Try again."
+        exit 1
+fi
+
+if [ -z "$git_branch" ]
+    then
+        git_branch="master"
+fi
+
+
 ## install sql server jdbc driver
 wget https://download.microsoft.com/download/2/F/C/2FC75210-EDDE-464C-8E54-45C0291032FF/sqljdbc_7.0.0.0_enu.tar.gz -P /usr/local
 gzip -d /usr/local/sqljdbc_7.0.0.0_enu.tar.gz
@@ -18,14 +40,14 @@ sudo pip install --upgrade setuptools
 apt-get install git
 
 ## download git repo
+mypasswd=$git_pwd
+mypasswd_new=${mypasswd/@/%40}
 rm -rf /home/deckysystem/EquipmentLifeCycle_RWG
-git clone https://kskp:Kskp%401712@github.com/Alenza/EquipmentLifeCycle_RWG.git --branch develop /home/deckysystem/EquipmentLifeCycle_RWG
+git clone https://$git_uid:$mypasswd_new@github.com/Alenza/EquipmentLifeCycle_RWG.git --branch $git_branch
 chmod -R 777 /home/deckysystem/EquipmentLifeCycle_RWG
 
-
-
 ## install python packages
-## sudo -H -u deckysystem bash -c 'cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user'
+sudo -H -u deckysystem bash -c 'cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user'
 chmod -R 777 /root/.local/lib/python2.7/site-packages
 chmod -r 777 /usr/local/lib/python2.7/dist-packages
 chmod -R 777 /home/deckysystem/.local/lib/python2.7/site-packages

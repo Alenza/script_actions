@@ -43,6 +43,7 @@ apt-get install git
 mypasswd=$git_pwd
 mypasswd_new=${mypasswd/@/%40}
 rm -rf /home/deckysystem/EquipmentLifeCycle_RWG
+cd /home/deckysystem/
 git clone https://$git_uid:$mypasswd_new@github.com/Alenza/EquipmentLifeCycle_RWG.git --branch $git_branch
 chmod -R 777 /home/deckysystem/EquipmentLifeCycle_RWG
 

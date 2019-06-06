@@ -48,10 +48,18 @@ git clone https://$git_uid:$mypasswd_new@github.com/Alenza/EquipmentLifeCycle_RW
 chmod -R 777 /home/deckysystem/EquipmentLifeCycle_RWG
 
 ## install python packages
+## install as deckysystem
 sudo -H -u deckysystem bash -c 'cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user'
-chmod -R 777 /root/.local/lib/python2.7/site-packages
-chmod -r 777 /usr/local/lib/python2.7/dist-packages
-chmod -R 777 /home/deckysystem/.local/lib/python2.7/site-packages
 
+## chmod -R 777 /root/.local/lib/python2.7/site-packages
+## chmod -R 777 /usr/local/lib/python2.7/dist-packages
+## chmod -R 777 /usr/local/lib/python2.7/site-packages
+## chmod -R 777 /home/deckysystem/.local/lib/python2.7/site-packages
+
+## Change owned of /home/deckysystem/.local/lib/python2.7 from root to deckysystem
+chown -R deckysystem /home/deckysystem/.local/lib/python2.7/
+
+## Change bash profile
 echo "export PYTHONPATH=$PYTHONPATH:/home/deckysystem/.local/lib/python2.7/site-packages:/usr/local/lib/python2.7/dist-packages:/root/.local/lib/python2.7/site-packages" >> /home/deckysystem/.bash_profile
-## source /home/deckysystem/.bash_profile
+source /home/deckysystem/.bash_profile
+

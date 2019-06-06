@@ -47,17 +47,22 @@ cd /home/deckysystem/
 git clone https://$git_uid:$mypasswd_new@github.com/Alenza/EquipmentLifeCycle_RWG.git --branch $git_branch
 chmod -R 777 /home/deckysystem/EquipmentLifeCycle_RWG
 
+## Change owned of /home/deckysystem/ from root to deckysystem
+chown -R deckysystem /home/deckysystem/
+
 ## install python packages
 ## install as deckysystem
 sudo -H -u deckysystem bash -c 'cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user'
+## FUTURE REFERENCE NOTES:
+## Probably we do not need to do sudo pip install, the pip install is enough if we have /home/deckysystem owned by /home/deckysystem
 sudo -H -u deckysystem bash -c 'cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 pip install --user'
 
 ## chmod -R 777 /root/.local/lib/python2.7/site-packages
 chmod -R 777 /usr/local/lib/python2.7/dist-packages
 chmod -R 777 /usr/local/lib/python2.7/site-packages
 ## chmod -R 777 /home/deckysystem/.local/lib/python2.7/site-packages
-
-## Change owned of /home/deckysystem/ from root to deckysystem
+## Change owned of /home/deckysystem/ from root to deckysystem: 
+## FUTURE REFERENCE: probably this part it is not necessary
 chown -R deckysystem /home/deckysystem/
 
 ## Change bash profile

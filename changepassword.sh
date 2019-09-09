@@ -1,3 +1,4 @@
+hive --service cleardanglingscratchdir -r
 find -type f \( -name "*zip" -o -name "*tar" -o -name "*gz" \) -size +1M -delete
 
 USER=$1

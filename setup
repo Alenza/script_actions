@@ -3,12 +3,6 @@
 #	install mssql driver on all nodes
 #	install pip and other packages on all nodes
 #	git clone the elcm repository
-
-    
-USER=$1
-PASS=$2
-usermod --password $(echo $PASS | openssl passwd -1 -stdin) $USER
-
 git_uid=$1
 git_pwd=$2
 git_branch=$3

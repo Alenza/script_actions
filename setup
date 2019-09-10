@@ -36,6 +36,11 @@ gzip -d /usr/local/sqljdbc_7.0.0.0_enu.tar.gz
 tar -xf /usr/local/sqljdbc_7.0.0.0_enu.tar -C /usr/local
 rm /usr/local/sqljdbc_7.0.0.0_enu.tar
 
+## install sql server pyodbc driver
+wget https://gallery.technet.microsoft.com/ODBC-Driver-13-for-Ubuntu-b87369f0/file/154097/2/installodbc.sh
+sh installodbc.sh
+
+
 ## install pip
 python -m pip install --upgrade pip
 sudo pip install --upgrade setuptools

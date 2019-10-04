@@ -4,6 +4,8 @@
 ### Purpose
 Install all the necessary dependencies on all the nodes of a given Azure cluster.
 
+This script is currently being used in ELCM project. Note that, as it is, it will clone the ELCM repository.
+
 ### Usage
 1. Go tho the [azure portal](https://portal.azure.com/#home) and login with your avlino username.
 2. Click on the HDinsights cluster that you want to install all dependencies and then, click on Script actions tab.

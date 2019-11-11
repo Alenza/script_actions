@@ -59,6 +59,9 @@ chmod -R 777 /home/deckysystem/EquipmentLifeCycle_RWG
 ## Change owned of /home/deckysystem/ from root to deckysystem
 chown -R deckysystem /home/deckysystem/
 
+## Dowload microsoft pyodbc driver
+wget "https://www.microsoft.com/en-us/download/confirmation.aspx?id=56567"
+
 ## install python packages
 ## install as deckysystem
 sudo -H -u deckysystem bash -c 'cat /home/deckysystem/EquipmentLifeCycle_RWG/setup/requirements.txt | xargs -n 1 sudo pip install --user'

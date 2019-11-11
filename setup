@@ -40,6 +40,9 @@ rm /usr/local/sqljdbc_7.0.0.0_enu.tar
 wget https://gallery.technet.microsoft.com/ODBC-Driver-13-for-Ubuntu-b87369f0/file/154097/2/installodbc.sh
 sh installodbc.sh
 
+## Dowload microsoft pyodbc driver
+wget -O /opt/microsoft "https://www.microsoft.com/en-us/download/confirmation.aspx?id=56567"
+
 
 ## install pip
 python -m pip install --upgrade pip
@@ -59,8 +62,6 @@ chmod -R 777 /home/deckysystem/EquipmentLifeCycle_RWG
 ## Change owned of /home/deckysystem/ from root to deckysystem
 chown -R deckysystem /home/deckysystem/
 
-## Dowload microsoft pyodbc driver
-wget "https://www.microsoft.com/en-us/download/confirmation.aspx?id=56567"
 
 ## install python packages
 ## install as deckysystem
